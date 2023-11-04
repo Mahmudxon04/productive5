@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:productive/core/widgets/w_button.dart';
 import 'package:productive/features/authentication/presentation/widgets/social_media_login_button.dart';
+import 'package:productive/features/verification/domain/verification.dart';
 
 import '../../../assets/constants/colors.dart';
 import '../../../assets/constants/icons.dart';
@@ -226,6 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     isDisabled: !isLoginDataValid,
                     onTap: () {
                       if (formKey.currentState!.validate()) {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>VerificationScreen()),);
                         print("We have a valid data");
                       }
                     },
